@@ -5,6 +5,9 @@ import numpy
 DPI = 200 # Плотность пикселей
 folder = 'img/'
 
+x_steps = [1, 2, 5, -1]
+y_steps = [2, 4, 2, -1]
+
 # Целевая функция
 def f(x, y):
     C = [1, 2, 10, 5, 7, 9]
@@ -25,6 +28,10 @@ def draw2D():
     x, y = numpy.meshgrid(x, y)
     z = f(x, y)
     plt.contourf(x, y, z, 25, cmap=cm.coolwarm)
+    # Сходимость решения
+    plt.plot(x_steps, y_steps, linewidth=0.8, color='orange')
+    for i in range(len(x_steps)):
+        plt.scatter(x_steps[i], y_steps[i], s=2, color='black')
     # Оси координат и заголовок
     plt.title(titleString, fontsize=19)
     plt.xlabel('X', fontsize=10)
