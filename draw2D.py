@@ -30,8 +30,7 @@ def draw2D():
     plt.contourf(x, y, z, 25, cmap=cm.coolwarm)
     # Сходимость решения
     plt.plot(x_steps, y_steps, linewidth=0.8, color='orange')
-    for i in range(len(x_steps)):
-        plt.scatter(x_steps[i], y_steps[i], s=2, color='black')
+    plt.scatter(x_steps, y_steps, s=2, color='black')
     # Оси координат и заголовок
     plt.title(titleString, fontsize=19)
     plt.xlabel('X', fontsize=10)
